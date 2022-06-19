@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>To-do List App</title>
+    </head>
+<body>
+    <a href="/">home</a> | <a href="/admin">login</a>
+    <pre></pre>
+    <a href="{% url 'todolist:index' %}"> List to-do</a>
+    
+    <p><strong>Title id:</strong> {{title.id}}</p>
+    <p><strong>Title:</strong> {{ title.title_text }}</p>
+    <p><strong>Deadline:</strong> {{title.pub_date}}</p> 
+    <fieldset>
+        <legend><strong>Description</strong></legend>
+        {% if error_message %}
+        <p><strong>{{ error_message }}</strong></p>
+        {% endif %}
+
+        {% for description in title.description_set.all %}
+            <ul><li> {{ description.description_text }}</li></ul>
+        {% endfor %}
+    </fieldset>
+</body>
+</html>

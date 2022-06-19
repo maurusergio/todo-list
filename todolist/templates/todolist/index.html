@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <a href="/">home</a> | <a href="/admin">login</a>
+        {% if latest_title_list %}
+        <p><strong>List to-do</strong></p>
+        <ur>
+            {% for title in latest_title_list %}
+            <li><a href="{% url  'todolist:detail' title.id %}">{{ title.title_text}}</a></li>
+            {% endfor %}
+        </ur>
+        {% else %}
+        <p>No tasks are available</p>
+        {% endif %}
+    </body>
+<html>
