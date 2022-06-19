@@ -9,6 +9,6 @@ urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
     
     # ex: /tasks/5/
-    path('<int:pk/', views.DetailView.as_view(), name='detail'),    
+    path('todolist/<int:pk>/', views.DetailView.as_view(), name='detail'),    
 
 ]

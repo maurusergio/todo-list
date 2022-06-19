@@ -56,7 +56,7 @@ class TitleModelTests(TestCase):
             """
             Titles with a pub_date in the future aren't displayed on the index
             """
-            create_title(title_text="Future question.", days=30)
+            create_title(title_text="Future title.", days=30)
             response = self.client.get(reverse('todolist:index'))
             self.assertContains(response, "No titles are available.")
             self.assertQuerysetEqual(response.context['latest_title_list'], [])
@@ -64,7 +64,7 @@ class TitleModelTests(TestCase):
         def test_future_title_and_past_title(self):
             """Even if both past future titles exist, only past titles are displayed."""
             title = create_title(title_text="Past fitle.", days=-30)
-            create_title(title_text="Future titile.", days=30)
+            create_title(title_text="Future title.", days=30)
             self.assertQuerysetEqual(
                 response.context['latest_fitle_list'],
                 [title],
