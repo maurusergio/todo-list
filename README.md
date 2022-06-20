@@ -1,5 +1,3 @@
-to-do list app
-
 Introduction
 
 this is a to-do list app, to create a task
@@ -10,9 +8,7 @@ How to use ?
 click title to create task name, then choose task expiration date,
 then click on description, choose the title that will be linked to the description
 
-Installation
-
-linux / windows
+Installation ==> linux / windows
 
 requirements:
 
